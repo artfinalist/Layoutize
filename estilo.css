@@ -1,0 +1,45 @@
+p { color: #ffffff;
+    text-align: center;
+    display: block;
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+body{
+        background-color: #001929; background-position:center 25px; background-attachment: fixed;
+    
+ul{ color: #00ffcc; font-weight: bold; }
+button{ background-color: #00ffcc; color: #080a09; font-weight: bold; border-radius: 5px; border: none; padding: 10px 20px; cursor: pointer; align-items: ;}
+
+p, button {
+    text-align: center; font-size: 15px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;
+    display: block;
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+.logo{
+    display: block;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    width: 500px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+#logos{display: block;
+    margin: 0 auto;
+    width: 300px;}
+
+#estampas{display: block;
+    margin: 0 auto;
+    width: 300px;  
+}
+#comunicacao{display: block;
+    margin: 0 auto;
+    width: 300px;   
+}
+
+#midias{display: block;
+    margin: 0 auto;
+    width: 300px;   
+}
+
+table {display: block;
+    margin: 0 auto;
+}
