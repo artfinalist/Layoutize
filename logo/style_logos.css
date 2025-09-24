@@ -1,0 +1,241 @@
+.logo {
+  display: block;
+  margin: 0 auto;
+  width: 400px; /* Ajuste o tamanho conforme necessário */
+  height: auto; /* Mantém a proporção da imagem */
+  padding: 0; /* Removido - Espaçamento controlado pelo header */
+}
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centraliza verticalmente */
+  padding: 20px 5%; /* Espaçamento geral do cabeçalho */
+  gap: 20px; /* Espaço entre o logo e a navegação */
+  background-color: rgba(0, 25, 41, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 255, 204, 0.2);
+  min-height: 180px; /* Ajuste conforme necessário */
+}
+
+/* --- Navegação Principal --- */
+.main-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* ESTADO PADRÃO (MOBILE): Navegação escondida */
+.main-nav ul {
+  display: none; /* Escondido por padrão */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 25, 41, 0.98);
+  padding-top: 100px;
+  align-items: center;
+  z-index: 1001;
+}
+
+/* Quando o menu mobile está ativo */
+.main-nav ul.active {
+  display: flex;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #00ffcc;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 2px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+  background-color: #00ffcc;
+  color: #080a09;
+}
+
+/* --- Estilos para ícones do menu mobile --- */
+#mobile-menu-btn .icon-close {
+  display: none; /* O ícone 'X' começa escondido */
+}
+
+/* Quando o menu está ativo, mostra o 'X' e esconde o hambúrguer */
+.menu-active #mobile-menu-btn .icon-close {
+  display: block;
+}
+
+.menu-active #mobile-menu-btn .icon-open {
+  display: none;
+}
+
+/* ESTADO PADRÃO (MOBILE): Botão visível */
+#mobile-menu-btn {
+  display: block;
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  z-index: 1002;
+  background: none;
+  border: none;
+  color: #00ffcc;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+body {
+  background-color: #001929;
+  background-position: center 25px;
+  background-attachment: fixed;
+  font-family: "Myriad Pro Bold Italic", sans-serif; /* ALTERADO */
+  color: #ffffff;
+  font-size: 60px;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.image-wrapper {
+  margin-bottom: 0; /* Removido pois o 'gap' do grid já faz o espaçamento */
+  text-align: center;
+}
+
+.image-wrapper img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+.image-wrapper p {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Estilo para o carrossel (modal) */
+.carousel-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-content {
+  max-width: 80%;
+  max-height: 80%;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-content img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+  .logo {
+    width: 250px; /* Reduz um pouco mais o logo */
+  }
+
+  header {
+    min-height: auto; /* Remove a altura mínima fixa */
+    padding: 15px 20px; /* Ajusta o espaçamento vertical e horizontal */
+    gap: 10px; /* Reduz o espaço entre logo e nav (se visível) */
+    justify-content: center; /* Garante o alinhamento central */
+  }
+
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr); /* ALTERADO: 2 colunas no mobile */
+    gap: 5px; /* Espaçamento entre as imagens */
+    padding: 5px; /* Espaçamento nas bordas da galeria */
+  }
+
+  .main-nav ul li a {
+    display: block;
+    padding: 20px;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(0, 255, 204, 0.1);
+  }
+}
+
+@media (min-width: 769px) {
+  #mobile-menu-btn {
+    display: none;
+  }
+
+  .main-nav ul {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+    padding-top: 0;
+    gap: 25px;
+  }
+}
