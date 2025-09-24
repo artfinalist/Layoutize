@@ -1,0 +1,312 @@
+/* --- Reset Básico e Estilos Globais --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #001929;
+  background-position: center 25px;
+  background-attachment: fixed;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #ffffff;
+  overflow-x: hidden; /* Previne scroll horizontal */
+}
+
+/* --- Cabeçalho --- */
+.main-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Empilha logo e nav verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  padding: 10px 5%;
+  background-color: rgba(0, 25, 41, 0.85); /* Fundo com transparência */
+  backdrop-filter: blur(
+    10px
+  ); /* Efeito de desfoque para navegadores modernos */
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 255, 204, 0.2);
+}
+
+#logo {
+  position: sticky;
+  display: block;
+  margin: 0 auto; /* Centraliza horizontalmente */
+  width: 400px; /* Ajuste o tamanho conforme necessário */
+  height: auto; /* Mantém a proporção da imagem */
+  padding-top: 10; /* REMOVIDO - Espaçamento controlado pelo header */
+  
+}
+
+/* Centraliza o nav */
+.main-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+/* --- Navegação Principal --- */
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  gap: 25px; /* Espaçamento entre os links */
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #00ffcc;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 2px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+  background-color: #00ffcc;
+  color: #080a09;
+}
+
+/* --- Botão do Menu Mobile --- */
+.mobile-menu-btn {
+  display: none; /* Escondido por padrão em telas maiores */
+  background: none;
+  border: none;
+  color: #00ffcc;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Esconde o botão no desktop */
+#mobile-menu-btn {
+  display: none;
+}
+
+/* Mostra e estiliza no mobile */
+@media (max-width: 768px) {
+  #mobile-menu-btn {
+    display: block;
+    align-items: center;
+    background-color: #00ffcc;
+    color: #080a09;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  #mobile-menu-btn:hover {
+    background-color: #00e6b8;
+  }
+}
+
+/* --- Conteúdo Principal --- */
+main {
+  padding: 40px 5%;
+}
+
+.section {
+  padding: 60px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #00ffcc;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.section p {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+}
+
+/* --- Galeria de Imagens --- */
+.gallery {
+  display: grid;
+  /* 3 colunas em telas grandes */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery-item {
+  
+
+ 
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px);
+  
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.gallery-item p {
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* --- Formulário de Contato --- */
+.contact-form {
+  max-width: 600px;
+  margin: 40px auto 0; /* Adicionado margem no topo */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  color: #00ffcc;
+  font-weight: bold;
+  text-align: left; /* Alinha o label à esquerda */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #00ffcc;
+  border-radius: 5px;
+  color: #ffffff;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 16px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.contact-form button {
+  background-color: #00ffcc;
+  color: #080a09;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+  align-self: center; /* Centraliza o botão */
+  margin-top: 10px;
+}
+
+.contact-form button:hover {
+  background-color: #00e6b8;
+  transform: scale(1.05);
+}
+
+/* --- Rodapé --- */
+.main-footer {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #00101a;
+  margin-top: 60px;
+}
+
+.social-icons a {
+  color: #00ffcc;
+  font-size: 28px;
+  margin: 0 15px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 10px 20px;
+  }
+
+  .mobile-menu-btn {
+    display: block; /* Mostra o botão em telas menores */
+  }
+
+  .main-nav ul {
+    display: none; /* Esconde a lista de links */
+    flex-direction: column;
+    position: absolute;
+    top: 80px; /* Altura do header */
+    right: 0;
+    width: 100%;
+    background-color: #001929;
+    border-top: 1px solid #00ffcc;
+  }
+
+  .main-nav ul.active {
+    display: flex; /* Mostra a lista quando o menu está ativo */
+  }
+
+  .main-nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-nav ul li a {
+    display: block;
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 255, 204, 0.1);
+  }
+
+  .gallery {
+    /* 1 coluna em telas menores */
+    grid-template-columns: 1fr;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+  }
+}
