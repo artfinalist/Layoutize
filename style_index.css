@@ -40,7 +40,7 @@ body {
   position: sticky;
   display: block;
   margin: 0 auto; /* Centraliza horizontalmente */
-  width: 400px; /* Ajuste o tamanho conforme necessário */
+  width: 300px; /* Ajuste o tamanho conforme necessário */
   height: auto; /* Mantém a proporção da imagem */
   padding-top: 10; /* REMOVIDO - Espaçamento controlado pelo header */
   
@@ -310,3 +310,4 @@ main {
     font-size: 2rem;
   }
 }
+
