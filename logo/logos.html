@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <link rel="stylesheet" href="style_logos.css" />
-  <title>Layoutize - Logo</title>
-  <header>
-    <a href="../index.html">
-      <img src="img/logo.png" alt="logo" class="logo" />
-    </a>
-    <!-- Botão para menu mobile -->
-    <button id="mobile-menu-btn" aria-label="Abrir menu">
-      <i class="fa fa-bars icon-open"></i>
-      <i class="fa fa-times icon-close"></i>
-    </button>
-    <!-- Lista de links da navegação foi deletada -->
-  </header>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layoutize - Design e Criação</title>
+    <!-- Link para a folha de estilos externa -->
+    <link rel="stylesheet" href="style_logo.css" />
+    <!-- Font Awesome para ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    
+  </head>
   <body>
-    <div class="gallery-container">
+    <header class="main-header">
+      <img src="img/logo.png" id="logo" />
+      <div id="logo-container"></div>
+      <nav class="main-nav">
+        <button id="mobile-menu-btn" aria-label="Abrir menu">
+          <i class="fa fa-bars"></i>
+        </button>
+        <!-- Lista de links da navegação -->
+        <ul id="nav-links">
+          <li><a href="#home">HOME</a></li>
+          <li><a href="logos/logos.html">LOGOS</a></li>
+          <li><a href="#estampas">ESTAMPAS</a></li>
+          <li><a href="#comunicacao">COMUNICAÇÃO VISUAL</a></li>
+          <li><a href="#midias">MIDIAS E WEB</a></li>
+          <li><a href="#sobre">SOBRE</a></li>
+          <li><a href="#parceiros">PARCEIROS</a></li>
+          <li><a href="#contato">FALE CONOSCO</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+   <div class="gallery-container">
       <div class="image-wrapper">
         <a href="#" class="open-carousel" data-image="img/1.png">
           <img src="img/1.png" alt="01_logo" />
@@ -487,5 +508,47 @@
     </div>
 
     <script src="script_logos.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+        <!-- Formulário de Contato -->
+        <form action="#" method="POST" class="contact-form">
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit">Enviar Mensagem</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="main-footer">
+      <div class="social-icons">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <p style="margin-top: 20px">
+        &copy; 2024 Layoutize. Todos os direitos reservados.
+      </p>
+    </footer>
+
+    <script type="module" src="script_logo.js"></script>
   </body>
 </html>
