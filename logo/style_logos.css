@@ -397,9 +397,7 @@ main {
 
 /* --- Responsividade --- */
 @media (max-width: 768px) {
-  .logo {
-    width: 250px; /* Reduz um pouco mais o logo */
-  }
+
 
   header {
     min-height: auto; /* Remove a altura mínima fixa */
