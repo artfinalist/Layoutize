@@ -1,7 +1,7 @@
 .logo {
   display: block;
   margin: 0 auto;
-  width: 400px; /* Ajuste o tamanho conforme necessário */
+  width: 300px; /* Ajuste o tamanho conforme necessário */
   height: auto; /* Mantém a proporção da imagem */
   padding: 0; /* Removido - Espaçamento controlado pelo header */
 }
@@ -239,3 +239,4 @@ body {
     gap: 25px;
   }
 }
+
