@@ -1,0 +1,438 @@
+/* --- Reset Básico e Estilos Globais --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #001929;
+  background-position: center 25px;
+  background-attachment: fixed;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #ffffff;
+  overflow-x: hidden; /* Previne scroll horizontal */
+}
+
+/* --- Cabeçalho --- */
+.main-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Empilha logo e nav verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  padding: 10px 5%;
+  background-color: rgba(0, 25, 41, 0.85); /* Fundo com transparência */
+  backdrop-filter: blur(
+    10px
+  ); /* Efeito de desfoque para navegadores modernos */
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 255, 204, 0.2);
+}
+
+#logo {
+  position: sticky;
+  display: block;
+  margin: 0; /* Centraliza horizontalmente */
+  width: 300px; /* Ajuste o tamanho conforme necessário */
+  height: auto; /* Mantém a proporção da imagem */
+  padding-top: 10; /* REMOVIDO - Espaçamento controlado pelo header */
+}
+
+/* Centraliza o nav */
+.main-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+/* --- Navegação Principal --- */
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  gap: 25px; /* Espaçamento entre os links */
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #00ffcc;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 2px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+  background-color: #00ffcc;
+  color: #080a09;
+}
+
+/* --- Botão do Menu Mobile --- */
+.mobile-menu-btn {
+  display: none; /* Escondido por padrão em telas maiores */
+  background: none;
+  border: none;
+  color: #00ffcc;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Esconde o botão no desktop */
+#mobile-menu-btn {
+  display: none;
+}
+
+/* Mostra e estiliza no mobile */
+@media (max-width: 768px) {
+  #mobile-menu-btn {
+    display: block;
+    align-items: center;
+    background-color: #00ffcc86;
+    color: #080a09;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  #mobile-menu-btn:hover {
+    background-color: #00e6b8;
+  }
+}
+
+/* --- Conteúdo Principal --- */
+main {
+  padding: 40px 5%;
+}
+
+.section {
+  padding: 60px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #00ffcc;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.section p {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+}
+
+/* --- Galeria de Imagens --- */
+.gallery {
+  display: grid;
+  /* 3 colunas em telas grandes */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.gallery-item p {
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* --- Formulário de Contato --- */
+.contact-form {
+  max-width: 600px;
+  margin: 40px auto 0; /* Adicionado margem no topo */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  color: #00ffcc;
+  font-weight: bold;
+  text-align: left; /* Alinha o label à esquerda */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #00ffcc;
+  border-radius: 5px;
+  color: #ffffff;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 16px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 255, 204, 0.5);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.contact-form button {
+  background-color: #00ffcc;
+  color: #080a09;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+  align-self: center; /* Centraliza o botão */
+  margin-top: 10px;
+}
+
+.contact-form button:hover {
+  background-color: #00e6b8;
+  transform: scale(1.05);
+}
+
+/* --- Rodapé --- */
+.main-footer {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #00101a;
+  margin-top: 60px;
+}
+
+.social-icons a {
+  color: #00ffcc;
+  font-size: 28px;
+  margin: 0 15px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 10px 20px;
+  }
+
+  .mobile-menu-btn {
+    display: block; /* Mostra o botão em telas menores */
+  }
+
+  .main-nav ul {
+    display: none; /* Esconde a lista de links */
+    flex-direction: column;
+    position: absolute;
+    top: 80px; /* Altura do header */
+    right: 0;
+    width: 100%;
+    background-color: #001929;
+    border-top: 1px solid #00ffcc;
+  }
+
+  .main-nav ul.active {
+    display: flex; /* Mostra a lista quando o menu está ativo */
+  }
+
+  .main-nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-nav ul li a {
+    display: block;
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 255, 204, 0.1);
+  }
+
+  .gallery {
+    /* 1 coluna em telas menores */
+    grid-template-columns: 1fr;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+  }
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.image-wrapper {
+  margin-bottom: 0; /* Removido pois o 'gap' do grid já faz o espaçamento */
+  text-align: center;
+}
+
+.image-wrapper img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+.image-wrapper p {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Estilo para o carrossel (modal) */
+.carousel-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-content {
+  max-width: 80%;
+  max-height: 80%;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-content img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+
+
+  header {
+    min-height: auto; /* Remove a altura mínima fixa */
+    padding: 15px 20px; /* Ajusta o espaçamento vertical e horizontal */
+    gap: 10px; /* Reduz o espaço entre logo e nav (se visível) */
+    justify-content: center; /* Garante o alinhamento central */
+  }
+
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr); /* ALTERADO: 2 colunas no mobile */
+    gap: 5px; /* Espaçamento entre as imagens */
+    padding: 5px; /* Espaçamento nas bordas da galeria */
+  }
+
+  .main-nav ul li a {
+    display: block;
+    padding: 20px;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(0, 255, 204, 0.1);
+  }
+}
+
+@media (min-width: 769px) {
+  #mobile-menu-btn {
+    display: none;
+  }
+
+  .main-nav ul {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+    padding-top: 0;
+    gap: 25px;
+  }
+}
